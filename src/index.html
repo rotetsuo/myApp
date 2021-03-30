@@ -13,14 +13,48 @@
   <meta name="msapplication-tap-highlight" content="no" />
 
   <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
-
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
+<style>
 
+  .startApp{
+   height: 100%;
+
+  }
+  .startApp .appIcon{
+    height: 135px;
+    width: 135px;
+    margin: 0 auto;
+    display: block;
+  }
+  .startApp ion-row{
+    display: flex;
+    height: 100%;
+    align-content: center;
+  }
+  .startApp h1{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 38px;
+    text-align: center;
+
+    color: #000000;
+  }
+  .blackBtn{
+    background-color: #000000;
+    border-radius: 25px;
+    padding: 5px 25px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+</style>
 <body>
   <app-root></app-root>
+
 </body>
 
 </html>
