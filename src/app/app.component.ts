@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Filmes em Alta', url: '/folder/Inbox', icon: 'podium' },
-    { title: 'Pesquise por filmes', url: '/folder/Outbox', icon: 'search' },
-    { title: 'Recomendações', url: '/folder/Favorites', icon: 'sparkles' },
-    { title: 'Favoritos', url: '/folder/Archived', icon: 'heart' },
-    { title: 'Créditos', url: '/folder/Trash', icon: 'ribbon' },
+    { title: 'Filmes em Alta', url: 'filmes-em-alta', icon: 'podium' },
+    { title: 'Pesquise por filmes', url: 'pesquise-por-filmes', icon: 'search' },
+    { title: 'Recomendações', url: 'recomendacoes', icon: 'sparkles' },
+    { title: 'Favoritos', url: 'favoritos', icon: 'heart' },
+    { title: 'Créditos', url: 'creditos', icon: 'ribbon' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
