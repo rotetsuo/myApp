@@ -1,11 +1,67 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>filmesEmAlta</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+    <img src="../assets/3d-glasses.svg" alt="icone pipoca e oculos 3d" class="appIcon">
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-router-outlet>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ page_name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div id="top-container">
+  </div>
+
+  <div id="container">
+    <h2 class="front-title"><b>{{ page_name }}</b></h2>
+
+    <ion-card class="custom-card-override">
+      <img class="card-img-override" src="https://www.10wallpaper.com/wallpaper/1366x768/1509/Star_Wars_Kylo_Ren-Movie_Wallpaper_1366x768.jpg" />
+      <ion-card-header>
+        <ion-card-title>
+          <div class="card-text-override">
+            <table style="width: 100%;">
+              <tr>
+                <td style="text-align: left;"><b>#1</b></td>
+                <td style="text-align: center;"><b>Star Wars</b></td>
+                <td style="text-align: end;">
+                  <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
+                  <ion-icon class="card-buttons-override" name="heart-outline"></ion-icon>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>  
     
-  </ion-router-outlet>
+    <ion-card class="custom-card-override">
+      <img class="card-img-override" src="https://sm.ign.com/t/ign_br/review/j/joker-revi/joker-review_fpk2.1024.jpg" />
+      <ion-card-header>
+        <ion-card-title>
+          <div class="card-text-override">
+            <table style="width: 100%;">
+              <tr>
+                <td style="text-align: left;"><b>#2</b></td>
+                <td style="text-align: center;"><b>Coringa</b></td>
+                <td style="text-align: end;">
+                  <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
+                  <ion-icon class="card-buttons-override" name="heart-outline"></ion-icon>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>  
+
+  </div>
+  
 </ion-content>
