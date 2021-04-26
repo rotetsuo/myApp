@@ -21,6 +21,10 @@ const routes: Routes = [
   },  {
     path: 'pesquise-por-filmes',
     loadChildren: () => import('./pesquise-por-filmes/pesquise-por-filmes.module').then( m => m.PesquisePorFilmesPageModule)
+  },
+  {
+    path: 'recomendacoes',
+    loadChildren: () => import('./recomendacoes/recomendacoes.module').then( m => m.RecomendacoesPageModule)
   }
 
 ];
