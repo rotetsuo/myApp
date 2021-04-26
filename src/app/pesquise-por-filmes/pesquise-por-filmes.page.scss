@@ -26,3 +26,9 @@ ion-searchbar{
 ion-card{
     border-radius: 5%;
 }
+.card-img-override{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+}
