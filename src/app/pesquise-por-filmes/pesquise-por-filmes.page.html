@@ -9,20 +9,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ page_name }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <div id="top-container">
-  </div>
 
-  <div id="container">
-    
-    <h1>Filmes em alta</h1>
-
+<ion-content>
+    <h1>Pesquise por filmes!</h1>
+    <ion-searchbar></ion-searchbar>
     <ion-card class="custom-card-override">
       <img class="card-img-override" src="https://www.10wallpaper.com/wallpaper/1366x768/1509/Star_Wars_Kylo_Ren-Movie_Wallpaper_1366x768.jpg" />
       <ion-card-header>
@@ -42,7 +32,7 @@
         </ion-card-title>
       </ion-card-header>
     </ion-card>  
-    
+
     <ion-card class="custom-card-override">
       <img class="card-img-override" src="https://sm.ign.com/t/ign_br/review/j/joker-revi/joker-review_fpk2.1024.jpg" />
       <ion-card-header>
@@ -62,7 +52,4 @@
         </ion-card-title>
       </ion-card-header>
     </ion-card>  
-
-  </div>
-  
 </ion-content>

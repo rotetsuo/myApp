@@ -1,0 +1,28 @@
+.appIcon{
+    height: 57px;
+    width: 57px;
+    margin-left: -10px;
+}
+ion-toolbar{
+    text-align: center;
+}
+h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+    color: #000000;
+}
+ion-searchbar{
+    --background: #000000!important;
+    background: #000000!important;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+}
+.searchbar-input{
+    background-color: #000000!important;
+}
+ion-card{
+    border-radius: 5%;
+}
