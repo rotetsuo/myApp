@@ -36,7 +36,7 @@ ion-menu-button {
   .appIcon{
     height: 57px;
     width: 57px;
-    margin-left: -10px;
+    align-items: center;
   }
   ion-toolbar{
     text-align: center;
@@ -49,6 +49,8 @@ ion-menu-button {
     border-radius: 5%;
   }
   .card-img-override{
+    margin-left: auto;
+    margin-right: auto;
     width: 950px;
   }
   .card-text-override{
