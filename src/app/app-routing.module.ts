@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'pesquise-por-filmes',
     loadChildren: () => import('./pesquise-por-filmes/pesquise-por-filmes.module').then( m => m.PesquisePorFilmesPageModule)
   },
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'favoritos',
     loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule)
+  },
+  { 
+    path: 'movies/:id',
+    loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule' 
   },
   {
     path: 'creditos',
