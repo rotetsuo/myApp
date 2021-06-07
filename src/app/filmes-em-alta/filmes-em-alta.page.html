@@ -12,7 +12,7 @@
 <ion-content [fullscreen]="true">
   <h1>Filmes em alta</h1>
 
-  <ion-card class="custom-card-override" *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.id]">
+  <ion-card class="custom-card-override" *ngFor="let item of (results | async)">
     <img class="card-img-override" [src]=" 'https://www.themoviedb.org/t/p/w500' + item.poster_path" *ngIf="item.poster_path != 'N/A'" />
       <ion-card-header>
         <ion-card-title>
@@ -21,7 +21,7 @@
               <tr>
                 <td style="text-align: center;"><b>{{ item.title }}</b></td>
                 <td style="text-align: end;">
-                  <ion-button class="card-buttons-override" name="heart-outline"  (click)="onClick(item.title, item.poster_path)"></ion-button>
+                  <ion-button class="card-buttons-override" name="heart-outline"  (click)= "onClick(item.title, item.poster_path, item.id)" expand="block" ></ion-button>
                 </td>
               </tr>
             </table>

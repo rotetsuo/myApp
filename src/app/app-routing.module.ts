@@ -31,10 +31,7 @@ const routes: Routes = [
     path: 'favoritos',
     loadChildren: () => import('./favoritos/favoritos.module').then( m => m.FavoritosPageModule)
   },
-  { 
-    path: 'movies/:id',
-    loadChildren: './pages/movie-details/movie-details.module#MovieDetailsPageModule' 
-  },
+
   {
     path: 'creditos',
     loadChildren: () => import('./creditos/creditos.module').then( m => m.CreditosPageModule)

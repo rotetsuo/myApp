@@ -21,10 +21,14 @@ export class FilmesEmAltaPage implements OnInit {
 
   public movie = {
     title: '',
-    image_path: ''
+    image_path: '',
+    id: 0
   };
 
-  onClick(name: String, poster: String) {
+  onClick(name: string, poster: string, id: number) {
+    this.movie.title = name
+    this.movie.image_path = poster
+    this.movie.id = id
     this.movieService.addMovie(this.movie);
   }
 }

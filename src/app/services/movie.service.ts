@@ -11,7 +11,8 @@ export enum ModeEnum {
 
 type Movie = {
   title: string,
-  image_path: string
+  image_path: string,
+  id: number
 }
  
 @Injectable({
@@ -21,9 +22,19 @@ export class MovieService {
   url = 'https://api.themoviedb.org/3/';
   api_key = '8a4f4006c9ebafc289bdf86dcdc5cc66';
 
-  constructor(private http: HttpClient, private storage: Storage) { }
+  constructor(private http: HttpClient, private storage: Storage) {
+    this.loadFromStorage();
+   }
 
   private movies: Movie[] = [];
+
+  private async loadFromStorage() {
+    const storedMovies = await this.storage.get('movies');
+    if (storedMovies) {
+      // uso corretor do spreader
+      this.movies.push(...storedMovies);
+    }
+  }
  
   searchData(search_query: string): Observable<any> {
     return this.http.get(`${this.url}search/movie?api_key=${this.api_key}&query=${encodeURI(search_query)}&language=pt-BR`).pipe(
@@ -42,7 +53,17 @@ export class MovieService {
   }
 
   public addMovie(movie: Movie) {
-    this.storage.set('movies', this.movies);
+    if  (this.movies.find((s) => s.id === movie.id)) {
+     
+    } else {
+      this.movies.push({ ...movie});
+      this.storage.set('movies', this.movies);
+    }
+   
   }
+
+  public allMovies(): Readonly<Movie>[] { 
+    return this.movies; 
+  } 
 
 }
