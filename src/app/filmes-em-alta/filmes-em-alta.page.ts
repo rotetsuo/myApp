@@ -19,4 +19,12 @@ export class FilmesEmAltaPage implements OnInit {
     this.results = this.movieService.topMovies();
   }
 
+  public movie = {
+    title: '',
+    image_path: ''
+  };
+
+  onClick(name: String, poster: String) {
+    this.movieService.addMovie(this.movie);
+  }
 }
