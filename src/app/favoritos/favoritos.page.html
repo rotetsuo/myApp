@@ -13,16 +13,15 @@
 <ion-content>
   <h1>Seus Filmes favoritos  </h1>
     
-  <ion-card class="custom-card-override">
-    <img class="card-img-override" src="https://wallpapercave.com/wp/wp5264426.jpg" />
+  <ion-card class="custom-card-override" *ngFor="let movie of movies">
+    <img class="card-img-override" [src]=" 'https://www.themoviedb.org/t/p/w500' + movie.image_path" *ngIf="movie.image_path != 'N/A'"  />
     <ion-card-header>
       <ion-card-title>
         <div class="card-text-override">
           <table style="width: 100%;">
             <tr>
-              <td style="text-align: center;"><b>Parasite</b></td>
+              <td style="text-align: center;"><b>{{movie.title}}</b></td>
               <td style="text-align: end;">
-                <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
                 <ion-icon class="card-buttons-override" name="heart-sharp"></ion-icon>
               </td>
             </tr>
@@ -31,80 +30,7 @@
       </ion-card-title>
     </ion-card-header>
   </ion-card>  
-  <ion-card class="custom-card-override">
-    <img class="card-img-override" src="https://sm.ign.com/t/ign_br/review/j/joker-revi/joker-review_fpk2.1024.jpg" />
-    <ion-card-header>
-      <ion-card-title>
-        <div class="card-text-override">
-          <table style="width: 100%;">
-            <tr>
-              <td style="text-align: center;"><b>Coringa</b></td>
-              <td style="text-align: end;">
-                <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
-                <ion-icon class="card-buttons-override" name="heart-sharp"></ion-icon>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-  </ion-card>  
-  <ion-card class="custom-card-override">
-    <img class="card-img-override" src="https://ovicio.com.br/wp-content/uploads/2020/04/20200413-soul-disneypixar-1200x675.jpg" />
-    <ion-card-header>
-      <ion-card-title>
-        <div class="card-text-override">
-          <table style="width: 100%;">
-            <tr>
-              <td style="text-align: center;"><b>Soul</b></td>
-              <td style="text-align: end;">
-                <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
-                <ion-icon class="card-buttons-override" name="heart-sharp"></ion-icon>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-  </ion-card>  
-    <ion-card class="custom-card-override">
-      <img class="card-img-override" src="https://wallpapercave.com/wp/wp6353576.jpg" />
-      <ion-card-header>
-        <ion-card-title>
-          <div class="card-text-override">
-            <table style="width: 100%;">
-              <tr>
-                <td style="text-align: center;"><b>Liga da Justiça: Snyder's Cut</b></td>
-                <td style="text-align: end;">
-                  <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
-                  <ion-icon class="card-buttons-override" name="heart-sharp"></ion-icon>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </ion-card-title>
-      </ion-card-header>
-    </ion-card>  
-
-
-    <ion-card class="custom-card-override">
-      <img class="card-img-override" src="https://wallpaperaccess.com/full/1740184.jpg" />
-      <ion-card-header>
-        <ion-card-title>
-          <div class="card-text-override">
-            <table style="width: 100%;">
-              <tr>
-                <td style="text-align: center;"><b>Django</b></td>
-                <td style="text-align: end;">
-                  <ion-icon class="card-buttons-override" name="share-social-outline"></ion-icon>
-                  <ion-icon class="card-buttons-override" name="heart-sharp"></ion-icon>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </ion-card-title>
-      </ion-card-header>
-    </ion-card>  
+ 
 
 
     
