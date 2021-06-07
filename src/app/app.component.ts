@@ -13,8 +13,5 @@ export class AppComponent {
     { title: 'Créditos', url: 'creditos', icon: 'ribbon' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor(private storage: Storage) {}
-  async asyncngOnInit() {
-    await this.storage.create();  
-  }
+  constructor() {}
 }

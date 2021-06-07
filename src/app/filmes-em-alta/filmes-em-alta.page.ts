@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../services/movie.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-filmes-em-alta',
@@ -9,20 +10,13 @@ import { MovieService } from '../services/movie.service';
 })
 export class FilmesEmAltaPage implements OnInit {
   public page_name: string;
+  results: Observable<any>;
 
-  constructor(private activatedRoute: ActivatedRoute, private  movieService: MovieService) { }
+
+  constructor(private activatedRoute: ActivatedRoute,private movieService: MovieService) { }
 
   ngOnInit() {
-    this.page_name = "Filmes em Alta";
-  }
-
-  public movie = {
-    title: '',
-    image_path: ''
-  };
-
-  onClick() {
-    this.movieService.addMovie(this.movie);
+    this.results = this.movieService.topMovies();
   }
 
 }
