@@ -15,7 +15,7 @@
     <ion-searchbar [(ngModel)]="search_terms" class="search-bar" (ionChange)="searchChanged($event)"></ion-searchbar>
 
         <ion-card class="custom-card-override" *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.id]">
-          <img class="card-img-override" [src]=" 'https://www.themoviedb.org/t/p/w220_and_h330_face' + item.poster_path" *ngIf="item.poster_path != 'N/A'" />
+          <img class="card-img-override" [src]=" 'https://www.themoviedb.org/t/p/w500' + item.poster_path" *ngIf="item.poster_path != 'N/A'" />
           <ion-card-header>
             <ion-card-title>
               <div class="card-text-override">
