@@ -48,6 +48,12 @@ export class MovieService {
     );
   } 
 
+  recMovies(): Observable<any> {
+    return this.http.get(`${this.url}movie/top_rated?api_key=${this.api_key}`).pipe(
+      map(results => results['results'])
+    );
+  } 
+
   getDetails(id) {
     return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.api_key}`);
   }
