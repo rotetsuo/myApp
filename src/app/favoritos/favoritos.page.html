@@ -11,7 +11,7 @@
 
 
 <ion-content>
-  <h1>Seus Filmes favoritos</h1>
+  <h1>Seus Filmes favoritos  </h1>
     
   <ion-card class="custom-card-override" *ngFor="let movie of movies">
     <img class="card-img-override" [src]=" 'https://www.themoviedb.org/t/p/w500' + movie.image_path" *ngIf="movie.image_path != 'N/A'"  />

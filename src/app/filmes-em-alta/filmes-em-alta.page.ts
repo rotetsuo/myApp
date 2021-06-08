@@ -9,7 +9,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./filmes-em-alta.page.scss'],
 })
 export class FilmesEmAltaPage implements OnInit {
+  public page_name: string;
   results: Observable<any>;
+
 
   constructor(private activatedRoute: ActivatedRoute,private movieService: MovieService) { }
 
@@ -23,10 +25,17 @@ export class FilmesEmAltaPage implements OnInit {
     id: 0
   };
 
-  onClick(name: string, poster: string, id: number) {
+  onClick(name: string, poster: string, id: number) { 
     this.movie.title = name
     this.movie.image_path = poster
     this.movie.id = id
-    this.movieService.addMovie(this.movie);
+    this.movieService.setMovie(this.movie);
+  }
+  
+  heartFill(id: number): string {
+    if (this.movieService.movieHasSaved(id) === true) {
+      return "heart-sharp"
+    } else 
+      return "heart-outline"
   }
 }
