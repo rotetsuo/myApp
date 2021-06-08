@@ -15,8 +15,29 @@ export class PesquisePorFilmesPage implements OnInit {
 
   ngOnInit() {
   }
- 
+
+  public movie = {
+    title: '',
+    image_path: '',
+    id: 0
+  };
+  
   searchChanged() {
+    // Call our service function which returns an Observable
     this.results = this.movieService.searchData(this.search_terms);
+  }
+
+  onClick(name: string, poster: string, id: number) { 
+    this.movie.title = name
+    this.movie.image_path = poster
+    this.movie.id = id
+    this.movieService.setMovie(this.movie);
+  }
+  
+  heartFill(id: number): string {
+    if (this.movieService.movieHasSaved(id) === true) {
+      return "heart-sharp"
+    } else 
+      return "heart-outline"
   }
 }

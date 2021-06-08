@@ -43,13 +43,7 @@ export class MovieService {
   }
 
   topMovies(): Observable<any> {
-    return this.http.get(`${this.url}trending/all/week?api_key=${this.api_key}&language=pt-BR`).pipe(
-      map(results => results['results'])
-    );
-  } 
-
-  recMovies(): Observable<any> {
-    return this.http.get(`${this.url}movie/top_rated?api_key=${this.api_key}`).pipe(
+    return this.http.get(`${this.url}trending/movies/week?api_key=${this.api_key}&language=pt-BR`).pipe(
       map(results => results['results'])
     );
   } 
@@ -58,9 +52,12 @@ export class MovieService {
     return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.api_key}`);
   }
 
-  public addMovie(movie: Movie) {
-    if  (this.movies.find((s) => s.id === movie.id)) {
-     
+  public setMovie(movie: Movie) {
+    if  (this.movies.find((m) => m.id === movie.id)) {
+      this.storage.forEach( (item, index) => {
+        if(item.id === movie.id) this.storage.remove(index)
+      });
+      this.movies.pop
     } else {
       this.movies.push({ ...movie});
       this.storage.set('movies', this.movies);
@@ -70,6 +67,13 @@ export class MovieService {
 
   public allMovies(): Readonly<Movie>[] { 
     return this.movies; 
+  }
+  
+  public movieHasSaved(id: number): Boolean { 
+    if (this.movies.find((m) => m.id === id)){
+      return true
+    }
+      return false
   } 
 
 }

@@ -8,6 +8,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'folder/:id',
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
     path: 'filmes-em-alta',
     loadChildren: () => import('./filmes-em-alta/filmes-em-alta.module').then( m => m.FilmesEmAltaPageModule)
   },
