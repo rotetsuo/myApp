@@ -48,17 +48,19 @@ export class MovieService {
     );
   } 
 
+  recMovies(): Observable<any> {
+    return this.http.get(`${this.url}movie/top_rated?api_key=${this.api_key}`).pipe(
+      map(results => results['results'])
+    );
+  } 
+
   getDetails(id) {
     return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.api_key}`);
   }
 
   public setMovie(movie: Movie) {
-    if  (this.movies.find((m) => m.id === movie.id)) {
-      this.storage.forEach( (item, index) => {
-        if(item.id === movie.id) this.storage.remove(index)
-      });
-      this.movies.pop
-    } else {
+    if  (this.movies.find((m) => m.id === movie.id)) {} 
+    else {
       this.movies.push({ ...movie});
       this.storage.set('movies', this.movies);
     }
