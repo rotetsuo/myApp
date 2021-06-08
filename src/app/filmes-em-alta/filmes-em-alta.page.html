@@ -21,9 +21,6 @@
               <tr>
                 <td style="text-align: center;"><b>{{ item.title }}</b></td>
                 <td style="text-align: end;">
-                  <script>
-                    var iconName = heartFill(item.id)
-                 </script>
                   <ion-icon class="card-buttons-override"  name= {{heartFill(item.id)}} (click)= "onClick(item.title, item.poster_path, item.id)" expand="block" ></ion-icon>
                 </td>
               </tr>
