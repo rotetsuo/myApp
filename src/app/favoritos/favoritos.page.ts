@@ -9,6 +9,7 @@ import { MovieService } from '../services/movie.service';
 export class FavoritosPage implements OnInit {
 
   constructor(private movieService: MovieService) { }
+  
   public movies = this.movieService.allMovies();
 
   ngOnInit() {
