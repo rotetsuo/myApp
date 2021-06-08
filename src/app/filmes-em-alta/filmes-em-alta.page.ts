@@ -9,9 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./filmes-em-alta.page.scss'],
 })
 export class FilmesEmAltaPage implements OnInit {
-  public page_name: string;
   results: Observable<any>;
-
 
   constructor(private activatedRoute: ActivatedRoute,private movieService: MovieService) { }
 

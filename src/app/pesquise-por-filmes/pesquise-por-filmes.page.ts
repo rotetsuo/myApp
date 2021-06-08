@@ -17,7 +17,6 @@ export class PesquisePorFilmesPage implements OnInit {
   }
  
   searchChanged() {
-    // Call our service function which returns an Observable
     this.results = this.movieService.searchData(this.search_terms);
   }
 }
